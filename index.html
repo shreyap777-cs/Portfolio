@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Patra | AI Engineer & Creative Developer</title>
+  <meta name="description" content="Official portfolio of Shreya Patra - Full-Stack AI Engineer, Cybersecurity Researcher, and Creative Technologist specializing in Agentic AI and Futuristic Web Architectures." />
+  <meta name="theme-color" content="#05070D" />
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Shreya Patra | Futuristic AI & Engineering Portfolio" />
+  <meta property="og:description" content="Explore AI-powered phishing defense, sentiment analysis pipelines, generative agent workflows, and cutting-edge software engineering." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- Ambient Particle & Warp Canvas -->
+  <canvas id="particleCanvas"></canvas>
+  <div class="cyber-grid-overlay"></div>
+  <div id="warpOverlay" class="warp-overlay"></div>
+
+  <!-- Custom Cyber Cursor (Desktop) -->
+  <div id="cursorDot" class="cursor-dot"></div>
+  <div id="cursorRing" class="cursor-ring"></div>
+
+  <!-- Top Floating Cyber Navbar -->
+  <header class="navbar-wrap">
+    <nav id="navbar" class="navbar">
+      <a href="#hero" class="nav-brand" data-hover="true">
+        <span>Shreya</span><span class="nav-brand-highlight">'s</span> <span>Portfolio</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-hover="true">About</a></li>
+        <li><a href="#skills" class="nav-link" data-hover="true">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-hover="true">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-hover="true">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-hover="true">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Audio Synth Toggle -->
+        <button id="soundToggleBtn" class="audio-toggle-btn" title="Toggle Futuristic Audio SFX" data-hover="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+          <span>AUDIO: OFF</span>
+        </button>
+
+        <!-- Direct CV Button -->
+        <a href="https://drive.google.com/file/d/11mMFhTAIGnDyfbf55fVBXIpp7YpjJxYI/view" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-primary cyber-btn-sm" data-hover="true">
+          <span>CV</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuToggle" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#hero" class="mobile-nav-link">Home</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#skills" class="mobile-nav-link">Skills</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#education" class="mobile-nav-link">Education</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         1. HERO SECTION: ANDROID ROBOT VIDEO & WARP TRANSITION
+         ======================================================================= -->
+    <section id="hero" class="hero-section" id="heroContainer">
+      <!-- Background Video Layer -->
+      <div class="hero-video-container">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto">
+          <source src="Video 1.mp4" type="video/mp4" />
+          Your browser does not support high-definition video playback.
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <!-- Holographic HUD Overlays -->
+      <div class="hero-hud-frame">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+
+        <div class="hud-telemetry">
+          <span>SYS_STATUS :: NOMINAL</span>
+          <span>NEURAL_ENGINE :: ACTIVE</span>
+          <span>LATENCY :: 0.04ms</span>
+          <span>MATRIX :: SECURE</span>
+        </div>
+
+        <div class="hud-crosshair"></div>
+      </div>
+
+      <!-- Foreground Interactive Content -->
+      <div class="hero-content">
+        <div id="heroRoleBadge" class="hero-role-badge">
+          <span class="pulse-dot"></span> SYSTEM ONLINE
+        </div>
+
+        <div id="heroSubtitles" class="hero-subtitles">
+          <h1 class="hero-title-text text-glow">Hi! I'm Shreya Patra</h1>
+          <p class="hero-desc-text">AI Engineer, Full-Stack Developer & Creative Problem Solver</p>
+        </div>
+
+        <div class="hero-actions">
+          <button id="skipIntroBtn" class="cyber-btn cyber-btn-primary" data-hover="true">
+            <span>Explore Matrix</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
+
+          <button id="replayIntroBtn" class="cyber-btn cyber-btn-secondary" data-hover="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            <span>Replay Hologram</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         2. INFINITE CYBER MARQUEE
+         ======================================================================= -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          <span>GEN AI</span> <span class="marquee-separator">✦</span>
+          <span>PYTHON</span> <span class="marquee-separator">✦</span>
+          <span>AGENTIC AI</span> <span class="marquee-separator">✦</span>
+          <span>CYBERSECURITY</span> <span class="marquee-separator">✦</span>
+          <span>PROMPT ENGINEERING</span> <span class="marquee-separator">✦</span>
+          <span>MACHINE LEARNING</span> <span class="marquee-separator">✦</span>
+          <span>POWER BI</span> <span class="marquee-separator">✦</span>
+          <span>PROBLEM SOLVER</span> <span class="marquee-separator">✦</span>
+        </div>
+        <div class="marquee-item">
+          <span>GEN AI</span> <span class="marquee-separator">✦</span>
+          <span>PYTHON</span> <span class="marquee-separator">✦</span>
+          <span>AGENTIC AI</span> <span class="marquee-separator">✦</span>
+          <span>CYBERSECURITY</span> <span class="marquee-separator">✦</span>
+          <span>PROMPT ENGINEERING</span> <span class="marquee-separator">✦</span>
+          <span>MACHINE LEARNING</span> <span class="marquee-separator">✦</span>
+          <span>POWER BI</span> <span class="marquee-separator">✦</span>
+          <span>PROBLEM SOLVER</span> <span class="marquee-separator">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         3. ABOUT / INTRODUCTION SECTION & CYBER TERMINAL
+         ======================================================================= -->
+    <section id="about" class="section-wrapper">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-tag">
+            <span class="pulse-dot"></span> SYSTEM_CORE :: IDENTITY_VERIFIED
+          </div>
+          <h2 class="section-title gradient-text">Pioneering Intelligent Systems & Cyber Defense</h2>
+          <p class="section-subtitle">Bridging mathematical machine learning, autonomous agentic workflows, and high-performance user interfaces.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Narrative & Bio -->
+          <div class="about-narrative scroll-reveal">
+            <h3 class="about-headline">
+              Hello, I'm <span class="text-glow gradient-text-cyan">Shreya Patra</span>.
+            </h3>
+            <p class="about-paragraph">
+              I am an AI Engineer, Full-Stack Developer, and Creative Technologist currently pursuing my B.Tech in Computer Science & Engineering (Class of 2026). My work revolves around designing intelligent AI architectures, developing automated machine learning defense systems, and engineering intuitive digital platforms.
+            </p>
+            <p class="about-paragraph">
+              From building intelligent heuristic phishing detection tools to architecting NLP review sentiment pipelines and multi-agent systems, I turn complex data challenges into robust, user-centric software.
+            </p>
+
+            <!-- Focus Chips -->
+            <div class="about-chips">
+              <div class="about-chip">
+                <span style="color: var(--cyber-cyan);">🧠</span> Gen & Agentic AI
+              </div>
+              <div class="about-chip">
+                <span style="color: var(--cyber-purple);">🛡️</span> Cybersecurity & ML
+              </div>
+              <div class="about-chip">
+                <span style="color: var(--cyber-emerald);">⚡</span> Algorithmic Systems
+              </div>
+              <div class="about-chip">
+                <span style="color: #FACC15);">📊</span> Data Intelligence
+              </div>
+            </div>
+
+            <!-- CV Actions -->
+            <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+              <a href="https://drive.google.com/file/d/11mMFhTAIGnDyfbf55fVBXIpp7YpjJxYI/view" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-primary" data-hover="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span>View Full CV</span>
+              </a>
+              <a href="https://drive.google.com/uc?export=download&id=11mMFhTAIGnDyfbf55fVBXIpp7YpjJxYI" class="cyber-btn cyber-btn-secondary" data-hover="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Telemetry Matrix & Cyber Terminal -->
+          <div class="scroll-reveal">
+            <!-- Telemetry Matrix Card -->
+            <div class="glass-card about-matrix-card">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span class="font-mono" style="font-size: 0.8rem; color: var(--cyber-cyan);">~/shreya --status</span>
+                <span class="pulse-dot green"></span>
+              </div>
+              <div class="matrix-row">
+                <span class="matrix-key">Primary Focus</span>
+                <span class="matrix-val">Gen AI & Agentic Systems</span>
+              </div>
+              <div class="matrix-row">
+                <span class="matrix-key">Core Stack</span>
+                <span class="matrix-val">Python · ML · Web · AI Tools</span>
+              </div>
+              <div class="matrix-row">
+                <span class="matrix-key">Degree</span>
+                <span class="matrix-val">B.Tech CSE, 2026 (82.6%)</span>
+              </div>
+              <div class="matrix-row">
+                <span class="matrix-key">Current Status</span>
+                <span class="matrix-val" style="color: var(--cyber-emerald);">Open to High-Impact Roles</span>
+              </div>
+            </div>
+
+            <!-- Interactive Cyberdeck Terminal -->
+            <div id="cyberTerminal" class="cyber-terminal-card">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <div class="terminal-dot red"></div>
+                  <div class="terminal-dot yellow"></div>
+                  <div class="terminal-dot green"></div>
+                </div>
+                <div class="terminal-title">shreya@cyberdeck:~ (bash)</div>
+                <div style="font-size: 0.7rem; color: var(--cyber-cyan); font-family: var(--font-mono);">v4.2.0</div>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-output"></div>
+                <div class="terminal-input-wrap">
+                  <span class="terminal-prompt-user">shreya@cyberdeck:~$</span>
+                  <input type="text" class="terminal-input" placeholder="type 'help' or 'skills'..." autocomplete="off" spellcheck="false" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. SKILLS SECTION: INTERACTIVE MATRIX & SVG TECH LOGOS
+         ======================================================================= -->
+    <section id="skills" class="section-wrapper">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-tag">
+            <span class="pulse-dot"></span> NEURAL_ARSENAL :: 25+ TECHNOLOGIES
+          </div>
+          <h2 class="section-title gradient-text">Interactive Skills Matrix</h2>
+          <p class="section-subtitle">Categorized proficiency across languages, AI models, modern developer tools, cybersecurity, and data intelligence.</p>
+        </div>
+
+        <!-- Skills Filter Controls & Search -->
+        <div class="skills-controls scroll-reveal">
+          <div id="skillsCategories" class="skills-categories"></div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div class="skills-search-bar">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--cyber-cyan);">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" id="skillsSearchInput" class="skills-search-input" placeholder="Search technologies (e.g. Python, Gemini, Git, Power BI)..." />
+            </div>
+
+            <div id="skillsCountBadge" class="font-mono" style="font-size: 0.8rem; color: var(--cyber-cyan); padding: 0.4rem 0.9rem; background: rgba(0,240,255,0.06); border: 1px solid rgba(0,240,255,0.2); border-radius: 9999px;">
+              25 / 25 MODULES
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid of Skills -->
+        <div id="skillsGrid" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. PROJECTS SECTION: 3D HOLOGRAPHIC CARDS & REPOSITORIES
+         ======================================================================= -->
+    <section id="projects" class="section-wrapper">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-tag">
+            <span class="pulse-dot"></span> DEPLOYED_SYSTEMS :: FEATURED ARCHITECTURES
+          </div>
+          <h2 class="section-title gradient-text">Featured Projects</h2>
+          <p class="section-subtitle">A showcase of machine learning systems, cryptographic defenses, and futuristic digital experiences.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card glass-card scroll-reveal" data-hover="true">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" alt="Phishing Detector" class="project-img" loading="lazy" />
+              <div class="project-num-badge">01 // CYBER_DEFENSE</div>
+            </div>
+            <div class="project-content">
+              <div>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">Machine Learning</span>
+                  <span class="project-tag">Cybersecurity</span>
+                  <span class="project-tag">Flask</span>
+                </div>
+                <h3 class="project-title">AI-Powered Phishing Detection System</h3>
+                <p class="project-desc">
+                  An intelligent security system that analyzes suspicious URLs and email payloads in real time using machine learning token entropy and heuristic classification to stop cyber attacks.
+                </p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/shreyap777-cs/Phishing-Detector-Tool" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-secondary cyber-btn-sm" data-hover="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card glass-card scroll-reveal" data-hover="true">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1614064548237-096f735f344f?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" alt="Password Checker" class="project-img" loading="lazy" />
+              <div class="project-num-badge">02 // CRYPTOGRAPHY</div>
+            </div>
+            <div class="project-content">
+              <div>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">Security</span>
+                  <span class="project-tag">Entropy Math</span>
+                  <span class="project-tag">Algorithms</span>
+                </div>
+                <h3 class="project-title">Password Strength Checker & Generator</h3>
+                <p class="project-desc">
+                  A high-entropy cryptographic assessment tool that measures password resilience against brute-force dictionaries and generates uncrackable pseudo-random cryptographic keys.
+                </p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/shreyap777-cs/Password-Strength-Checker" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-secondary cyber-btn-sm" data-hover="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card glass-card scroll-reveal" data-hover="true">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" alt="Sentiment Analysis" class="project-img" loading="lazy" />
+              <div class="project-num-badge">03 // NLP_ANALYTICS</div>
+            </div>
+            <div class="project-content">
+              <div>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">NLP</span>
+                  <span class="project-tag">Data Analytics</span>
+                  <span class="project-tag">Scikit-Learn</span>
+                </div>
+                <h3 class="project-title">Sentiment Analysis on Product Reviews</h3>
+                <p class="project-desc">
+                  An end-to-end Natural Language Processing classification pipeline that breaks down massive customer sentiment nuances into actionable analytics and visualization dashboards.
+                </p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/debasmitabhattacharjee6644-ops/Sentiment-Analysis-on-Product-Review" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-secondary cyber-btn-sm" data-hover="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card glass-card scroll-reveal" data-hover="true">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" alt="Cyber Portfolio" class="project-img" loading="lazy" />
+              <div class="project-num-badge">04 // QUANTUM_WEB</div>
+            </div>
+            <div class="project-content">
+              <div>
+                <div class="project-tags">
+                  <span class="project-tag">HTML5 Canvas</span>
+                  <span class="project-tag">Video Warp</span>
+                  <span class="project-tag">Web Audio API</span>
+                  <span class="project-tag">Vanilla JS</span>
+                </div>
+                <h3 class="project-title">Ultra-Futuristic Next-Gen Portfolio</h3>
+                <p class="project-desc">
+                  This very experience — featuring the exact Android Robot video sequence, Canvas Hyperspace Warp Drive transitions, dynamic SVG skill matrix, and cyberdeck CLI emulator.
+                </p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/shreyap777-cs" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-secondary cyber-btn-sm" data-hover="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. EDUCATION SECTION: CYBER CIRCUIT TIMELINE
+         ======================================================================= -->
+    <section id="education" class="section-wrapper">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-tag">
+            <span class="pulse-dot"></span> ACADEMIC_CHRONOLOGY :: MILESTONES
+          </div>
+          <h2 class="section-title gradient-text">Education & Foundation</h2>
+          <p class="section-subtitle">Academic excellence and foundational rigor in Computer Science, mathematics, and systems engineering.</p>
+        </div>
+
+        <div class="education-timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-node scroll-reveal">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-tag">2022 – 2026 // CURRENT</div>
+              <h3 class="timeline-title">B.Tech in Computer Science & Engineering</h3>
+              <p class="timeline-place">St. Thomas' College of Engineering and Technology</p>
+              <div class="timeline-score-badge">
+                <span class="pulse-dot green"></span>
+                <span>Cumulative Score: <strong>82.6%</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-node scroll-reveal">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-tag">2022 // HIGHER SECONDARY</div>
+              <h3 class="timeline-title">Class XII (Science & Mathematics)</h3>
+              <p class="timeline-place">Sibpur Hindu Girls' High School</p>
+              <div class="timeline-score-badge">
+                <span class="pulse-dot green"></span>
+                <span>Score: <strong>84.83%</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-node scroll-reveal">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-tag">2020 // SECONDARY</div>
+              <h3 class="timeline-title">Class X (Madhyamik)</h3>
+              <p class="timeline-place">Sibpur Hindu Girls' High School</p>
+              <div class="timeline-score-badge">
+                <span class="pulse-dot green"></span>
+                <span>Score: <strong>89.28%</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. CONTACT SECTION: HOLOGRAPHIC TRANSMISSION CONSOLE
+         ======================================================================= -->
+    <section id="contact" class="section-wrapper">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-tag">
+            <span class="pulse-dot"></span> SECURE_RELAY :: GET IN TOUCH
+          </div>
+          <h2 class="section-title gradient-text">Initiate Communication</h2>
+          <p class="section-subtitle">Interested in collaborating on AI architectures, software engineering projects, or high-impact opportunities? Reach out anytime.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Links -->
+          <div class="contact-info scroll-reveal">
+            <a href="mailto:shreya.patra2510@gmail.com" class="contact-pill-link" data-hover="true">
+              <div class="contact-pill-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="font-mono" style="font-size: 0.75rem; color: #94A3B8;">PRIMARY EMAIL</div>
+                <div style="font-weight: 600;">shreya.patra2510@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/shreyap777" target="_blank" rel="noopener noreferrer" class="contact-pill-link" data-hover="true">
+              <div class="contact-pill-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <div>
+                <div class="font-mono" style="font-size: 0.75rem; color: #94A3B8;">LINKEDIN NETWORK</div>
+                <div style="font-weight: 600;">in/shreyap777</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/shreyap777-cs" target="_blank" rel="noopener noreferrer" class="contact-pill-link" data-hover="true">
+              <div class="contact-pill-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div>
+                <div class="font-mono" style="font-size: 0.75rem; color: #94A3B8;">GITHUB ARCHIVE</div>
+                <div style="font-weight: 600;">github.com/shreyap777-cs</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Holographic Form -->
+          <div class="glass-card contact-form scroll-reveal">
+            <form id="contactForm">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Identity (Name)</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Alex Mercer" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Transmission Channel (Email)</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. alex@quantum.tech" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">Payload Message</label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Describe project requirements or opportunity details..." required></textarea>
+              </div>
+
+              <button type="submit" class="cyber-btn cyber-btn-primary contact-submit-btn" style="width: 100%; margin-top: 0.5rem;" data-hover="true">
+                <span>Send Transmission</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border-subtle); padding: 3rem 0; background: rgba(5, 7, 13, 0.95); position: relative; z-index: 2;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div class="font-display" style="font-size: 1rem; font-weight: 800;">
+        Shreya<span style="color: var(--cyber-cyan);">'s</span> Portfolio
+      </div>
+      <div class="font-mono" style="font-size: 0.8rem; color: #64748B;">
+        Engineered & Designed by Shreya Patra · &copy; 2026 Quantum Protocol
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/skills-data.js"></script>
+  <script src="js/hero-engine.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
