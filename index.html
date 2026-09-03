@@ -389,7 +389,7 @@
                 </p>
               </div>
               <div class="project-links">
-                <a href="https://github.com/debasmitabhattacharjee6644-ops/Sentiment-Analysis-on-Product-Review" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-secondary cyber-btn-sm" data-hover="true">
+                <a href="https://github.com/shreyap777-cs/Sentiment-Analysis-on-Product-Review" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-secondary cyber-btn-sm" data-hover="true">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   <span>Source Code</span>
                 </a>
@@ -557,23 +557,25 @@
 
           <!-- Contact Form -->
           <div class="glass-card contact-form scroll-reveal">
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/xpwzldob" method="POST">
               <div class="form-group">
                 <label class="form-label" for="contactName">Your Name</label>
-                <input type="text" id="contactName" class="form-input" placeholder="e.g. Recruiter / Collaborator" required />
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Recruiter / Collaborator" required />
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="contactEmail">Your Email</label>
-                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. name@company.com" required />
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g. name@company.com" required />
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="contactMessage">Message</label>
-                <textarea id="contactMessage" class="form-textarea" placeholder="Describe role opportunities, project inquiries, or questions..." required></textarea>
+                <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Describe role opportunities, project inquiries, or questions..." required></textarea>
               </div>
 
-              <button type="submit" class="cyber-btn cyber-btn-primary contact-submit-btn" style="width: 100%; margin-top: 0.5rem;" data-hover="true">
+              <div id="formStatus" style="display:none; font-family: var(--font-mono); font-size: 0.85rem; padding: 0.6rem 1rem; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+
+              <button type="submit" id="contactSubmitBtn" class="cyber-btn cyber-btn-primary contact-submit-btn" style="width: 100%; margin-top: 0.5rem;" data-hover="true">
                 <span>Send Message</span>
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               </button>
